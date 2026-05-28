@@ -3,6 +3,7 @@ package objects;
 public class Hospede {
     private String nome;
     private String cpf;
+    private String contato;
 
     public Hospede(String nome, String cpf) {
         this.nome = nome;
