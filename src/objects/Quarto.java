@@ -12,12 +12,8 @@ public class Quarto {
         return true;
     }
 
-    public void ocupar(){
-        ocupado = true;
-    }
-
-    public void liberar(){
-        ocupado = false;
+    public void setOcupado(boolean ocupado) {
+        this.ocupado = ocupado;
     }
 
     public int getNumero() {
