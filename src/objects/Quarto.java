@@ -1,11 +1,15 @@
 package objects;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Quarto {
     private int numero;
     private boolean ocupado;
 
     public Quarto(int numero){
         this.numero = numero;
+        setOcupado(true);
     }
 
     public boolean isOcupado(){
