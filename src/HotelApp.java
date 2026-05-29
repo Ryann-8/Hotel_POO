@@ -2,12 +2,11 @@ import enums.StatusReserva;
 import objects.Hospede;
 import objects.Quarto;
 import objects.Reserva;
-
+import managers.ReservaManager;
 import java.util.ArrayList;
 import java.util.List;
 
 public class HotelApp{
-    public static List<Reserva> reservas = new ArrayList<>();
 
     static void main() {
         Hospede hospede = new Hospede("Marcos", "169");
@@ -18,10 +17,10 @@ public class HotelApp{
         Reserva reserva = new Reserva(hospede, quarto);
         Reserva reserva2 = new Reserva(hospede2, quarto2);
 
-        criarReserva(reserva);
-        criarReserva(reserva2);
+        ReservaManager.criarReserva(reserva);
+        ReservaManager.criarReserva(reserva2);
 
-        List<Reserva> reservasAtivas = listarReservasAtivas();
+        List<Reserva> reservasAtivas = ReservaManager.listarReservasAtivas();
         for (Reserva reservaAtiva : reservasAtivas) {
             System.out.println(
                     "Hospede: " + reservaAtiva.getHospede().getNome() + "\n" +
@@ -29,7 +28,7 @@ public class HotelApp{
             );
         }
 
-        Reserva reservaById = getReservaById(1);
+        Reserva reservaById = ReservaManager.getReservaById(1);
         System.out.println(reservaById.getStatus());
 
         reservaById.fazerCheckIn();
@@ -39,21 +38,4 @@ public class HotelApp{
         System.out.println(reservaById.getStatus());
     }
 
-    //Serviços relacionados a RESERVA, somente reservassss!
-    public static Reserva getReservaById(int id) {
-        return reservas.stream().filter(
-                r -> r.getId() == id)
-                .findFirst().orElse(null);
-    }
-    public static void criarReserva(Reserva reserva){
-        reservas.add(reserva);
-    }
-    public static List<Reserva> listarReservasAtivas() {
-        return reservas.stream().filter(
-                r -> r.getStatus() == StatusReserva.HOSPEDADO || r.getStatus() == StatusReserva.RESERVADO)
-                .toList();
-    }
-    public static List<Reserva> historicoReservas() {
-        return reservas.stream().filter(r -> r.getStatus() == StatusReserva.FINALIZADO).toList();
-    }
 }
