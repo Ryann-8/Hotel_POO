@@ -9,9 +9,6 @@ import java.util.List;
 public class ReservaManager {
     public static List<Reserva> reservas = new ArrayList<>();
 
-
-
-    //Serviços relacionados a RESERVA, somente reservassss!
     public static Reserva getReservaById(int id) {
         return reservas.stream().filter(
                         r -> r.getId() == id)

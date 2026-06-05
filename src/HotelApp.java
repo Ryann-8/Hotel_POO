@@ -1,4 +1,4 @@
-import enums.StatusReserva;
+import enums.QuartoTipo;
 import objects.Hospede;
 import objects.Quarto;
 import objects.Reserva;
@@ -11,13 +11,14 @@ public class HotelApp{
         Hospede hospede = new Hospede("Marcos", "169");
         Hospede hospede2 = new Hospede("Paulo", "222");
         Hospede hospede3 = new Hospede("Ryan", "123");
-        Quarto quarto = new Quarto(44);
-        Quarto quarto2 = new Quarto(33);
-        Quarto quarto3 = new Quarto(55);
+
+        Quarto quarto = new Quarto(44, QuartoTipo.BASICO);
+        Quarto quarto2 = new Quarto(33, QuartoTipo.DELUXE);
+        Quarto quarto3 = new Quarto(55, QuartoTipo.MASTER);
 
         Reserva reserva = new Reserva(hospede, quarto);
         Reserva reserva2 = new Reserva(hospede2, quarto2);
-        Reserva reserva3 = new Reserva(hospede3, quarto2);
+        Reserva reserva3 = new Reserva(hospede3, quarto3);
 
         ReservaManager.criarReserva(reserva);
         ReservaManager.criarReserva(reserva2);
@@ -26,10 +27,11 @@ public class HotelApp{
         List<Reserva> reservasAtivas = ReservaManager.listarReservasAtivas();
 
         for (Reserva reservaAtiva : reservasAtivas) {
-            System.out.println(
-                    "Hospede: " + reservaAtiva.getHospede().getNome() + "\n" +
-                            "Id da reserva: " + reservaAtiva.getId()
-            );
+            System.out.println("RESERVA ID: " + reservaAtiva.getId());
+            System.out.println("    Hospede: " + reservaAtiva.getHospede().getNome());
+            System.out.println("    Quarto: " + reservaAtiva.getQuarto().getNumero() + " - " + reservaAtiva.getQuarto().getTipo().toString());
+            System.out.println("    Status: " + reservaAtiva.getStatus().toString());
+            System.out.println(" ");
         }
 
         Reserva reservaById = ReservaManager.getReservaById(1);
