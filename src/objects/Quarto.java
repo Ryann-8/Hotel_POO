@@ -13,11 +13,11 @@ public class Quarto {
     public Quarto(int numero, QuartoTipo tipo){
         this.numero = numero;
         this.tipo = tipo;
-        setOcupado(true);
+        setOcupado(false);
     }
 
     public boolean isOcupado(){
-        return true;
+        return ocupado;
     }
 
     public void setOcupado(boolean ocupado) {
@@ -35,4 +35,5 @@ public class Quarto {
     public QuartoTipo getTipo() {
         return tipo;
     }
+
 }

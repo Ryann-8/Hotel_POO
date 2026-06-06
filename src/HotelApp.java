@@ -3,6 +3,7 @@ import objects.Hospede;
 import objects.Quarto;
 import objects.Reserva;
 import managers.ReservaManager;
+import managers.QuartoManager;
 import java.util.List;
 
 public class HotelApp{
@@ -15,6 +16,10 @@ public class HotelApp{
         Quarto quarto = new Quarto(44, QuartoTipo.BASICO);
         Quarto quarto2 = new Quarto(33, QuartoTipo.DELUXE);
         Quarto quarto3 = new Quarto(55, QuartoTipo.MASTER);
+
+        QuartoManager.adicionarQuarto(quarto);
+        QuartoManager.adicionarQuarto(quarto2);
+        QuartoManager.adicionarQuarto(quarto3);
 
         Reserva reserva = new Reserva(hospede, quarto);
         Reserva reserva2 = new Reserva(hospede2, quarto2);
