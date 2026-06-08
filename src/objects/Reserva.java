@@ -39,11 +39,9 @@ public class Reserva {
 
     public void fazerCheckIn() {
         setStatus(StatusReserva.HOSPEDADO);
-        quarto.setOcupado(true);
     }
 
     public void fazerCheckOut() {
         setStatus(StatusReserva.FINALIZADO);
-        quarto.setOcupado(false);
     }
 }
