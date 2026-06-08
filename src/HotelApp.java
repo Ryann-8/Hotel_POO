@@ -10,7 +10,7 @@ public class HotelApp{
 
     static void main() {
         Hospede hospede = new Hospede("Marcos", "169");
-        Hospede hospede2 = new Hospede("Paulo", "222");
+        Hospede hospede2 = new Hospede("William", "222");
         Hospede hospede3 = new Hospede("Ryan", "123");
 
         Quarto quarto = new Quarto(44, QuartoTipo.BASICO);
