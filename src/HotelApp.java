@@ -28,6 +28,7 @@ public class HotelApp{
         ReservaManager.criarReserva(reserva2);
         ReservaManager.criarReserva(reserva3);
 
+
         List<Reserva> reservasAtivas = ReservaManager.listarReservasAtivas();
 
         for (Reserva reservaAtiva : reservasAtivas) {
