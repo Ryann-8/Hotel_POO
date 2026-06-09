@@ -54,10 +54,13 @@ public class PrincipalController {
         switch (quartoSelecionado.getStatus()) {
             case DISPONIVEL:
                 btnCriarReserva.setVisible(true);
+                break;
             case RESERVADO:
                 btnCheckIn.setVisible(true);
+                break;
             case HOSPEDADO:
                 btnCheckOut.setVisible(true);
+                break;
         }
     }
 
