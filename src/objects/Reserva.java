@@ -1,6 +1,6 @@
 package objects;
 
-import enums.StatusReserva;
+
 
 public class Reserva {
     private static int countId = 0;
@@ -8,13 +8,13 @@ public class Reserva {
     private int id;
     private Hospede hospede;
     private Quarto quarto;
-    private StatusReserva status;
+
 
     public Reserva(Hospede hospede, Quarto quarto) {
         this.id = countId++;
         this.hospede = hospede;
         this.quarto = quarto;
-        this.status = StatusReserva.RESERVADO;
+
     }
 
     public Hospede getHospede() {
@@ -25,23 +25,13 @@ public class Reserva {
         return quarto;
     }
 
-    public StatusReserva getStatus() {
-        return status;
-    }
+
 
     public int getId() {
         return id;
     }
 
-    public void setStatus(StatusReserva status) {
-        this.status = status;
-    }
 
-    public void fazerCheckIn() {
-        setStatus(StatusReserva.HOSPEDADO);
-    }
 
-    public void fazerCheckOut() {
-        setStatus(StatusReserva.FINALIZADO);
-    }
+
 }
